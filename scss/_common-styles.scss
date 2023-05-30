@@ -1,0 +1,81 @@
+body{
+    font-family: 'Roboto';
+    @include adaptiv-font(16, 12);
+    color: #FFFFFF;
+    background: url('../img/bg.png');
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    background: black;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #7c6afa;
+    border-radius: 9em;
+}
+
+[class*="__container"]{
+    max-width: 1330px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    overflow: hidden;
+}
+
+.main{
+    flex: 1 1 auto;
+}
+
+.title{
+    @include adaptiv-font(48, 28);
+    line-height: 140%;
+    font-weight: 700;
+}
+
+.title__img{
+    width: 94px;
+    height: 94px;
+    margin-right: 40px;
+}
+
+
+@media (max-width: 1330px){
+    [class*="__container"]{
+        max-width: 970px;
+    }
+
+    .title__img{
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 991.98px){
+    [class*="__container"]{
+        max-width: 750px;
+    }
+
+    .title__img{
+        height: 65px;
+        width: 65px;
+        margin-right: 30px; 
+    }
+}
+
+@media (max-width: 767.98px){
+    [class*="__container"]{
+        max-width: none;
+    }
+
+    .title__img{
+        width: 45px;
+        height: 45px;
+        margin: 0 0 10px 0;
+    }
+}

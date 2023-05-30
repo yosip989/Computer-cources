@@ -1,0 +1,149 @@
+.footer{
+    &__content{ 
+        padding-top: 200px; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__title{
+        text-align: center;
+        line-height: 140%;
+        margin-bottom: 30px;
+    }
+
+    &__sub-title{
+        display: block;
+        text-align: center;
+        max-width: 411px;
+        opacity: 0.5;
+        line-height: 160%;
+        margin-bottom: 60px;
+    }
+
+    &__form{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 40px;
+
+        .email{
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50px 0px 0px 50px;
+            width: 353px;
+            height: 44px;
+            color: #fff;
+            padding: 0 20px;
+            font-size: 14px;
+            line-height: 160%;
+            transition: border 0.8s ease;
+
+            &::placeholder{
+                color: #FFFFFF;
+            }
+
+            &:focus{
+                border: solid 1px #DF5950;
+            }
+        }
+
+        .footer__button{
+            line-height: 150%;
+            font-weight: 700;
+            color: #FFFFFF;
+            padding: 10px 30px;
+            font-size: 16px;
+            background: linear-gradient(to left, #DF5950, #9a239c, #DF5950);
+            background-size: 170%;
+            border-radius: 50px;
+            position: relative;
+            right: 20px;
+            transition: background-position 0.6s ease;
+
+            &:hover{ background-position: right; }
+        }
+    }
+
+    &__list{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        max-width: 320px;
+        margin-bottom: 50px;
+    }
+
+    &__item{
+        width: 50px;
+        height: 50px;
+        margin: 0 15px 0;
+    }
+
+    &__link{
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: linear-gradient(to left, #C89AFC, #7C6AFA, #C89AFC);
+        background-size: 170%;
+        position: relative;
+        transition: background-position 0.6s ease;
+
+        &:hover{ background-position: right; }
+
+        &::after{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+    }
+    
+    &__aside{
+        display: block;
+        max-width: 411px;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    &__link.vk::after{ background: url("../img/footer/icon/vk.svg") no-repeat center; }
+    
+    &__link.youtube::after{ background: url("../img/footer/icon/youtube.svg") no-repeat center; }
+
+    &__link.fb::after{ background: url("../img/footer/icon/fb.svg") no-repeat center; }
+
+    &__link.ist::after{ background: url("../img/footer/icon/inst.svg") no-repeat center; }
+}
+
+
+@media (max-width: 565px){
+    .footer{
+        &__form {
+            flex-direction: column;
+            align-items: center;
+            
+            .email{
+                max-width: 100%;
+                height: 40px;
+                border-radius: 50px;
+                margin-bottom: 20px;
+            }
+
+            .footer__button{ right: 0; }
+        }
+    }
+}
+
+@media (max-width: 387px){
+    .footer{
+        &__list{
+            justify-content: space-around;
+            margin-bottom: 0;
+        }
+
+        &__item{ margin: 0 25px 40px; }
+
+        &__form { .email{ width: 290px; } }
+    }
+}

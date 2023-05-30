@@ -1,0 +1,324 @@
+.header{
+    &__content{
+        background: url('../img/header/bg.png') 50%/cover no-repeat;
+        flex: 1 1 auto;
+        position: relative;
+    }
+
+    &__navigation{
+        max-width: 1782px;
+        padding: 0 15px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        padding-top: 38px;
+    }
+
+    &__logo{
+        display: block;
+        flex: 1 1 auto;
+
+        img{
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    &__item{
+        margin-right: 56px;
+        &:last-child{ margin-right: 0; }
+    }
+
+    &__link{
+        color: #FFFFFF;
+        transition: all 0.4s linear;
+        position: relative;
+
+        &::before{
+            content: "";
+            width: calc(100% + 6px);
+            height: 4px;
+            border-radius: 10px;
+            background-color: #7C6AFA;
+            position: absolute;
+            bottom: -7px;
+            left: -3px;
+            transform: scaleX(0);
+            transition: all 0.4s ease;
+        }
+
+        &:hover{
+            color: #7C6AFA;
+            filter: drop-shadow(0 0 10px #7C6AFA);
+            &::before{transform: scaleX(1);}
+        }
+    }
+
+    &__button{
+        display: block;
+        padding: 10px 30px;
+        background: linear-gradient(to left, #C89AFC, #7C6AFA, #C89AFC);
+        background-size: 170%;
+        border-radius: 50px;
+        color: #fff;
+        line-height: 150%;
+
+        &:hover{ background-position: right; }
+    }
+
+    &__main-page-content{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 300px 0;
+    }
+
+    &__title{
+        padding-right: 40px;
+        font-weight: 700;
+        margin-bottom: 50px;
+        @include adaptiv-font(60, 35)
+    }
+
+    &__menu{ margin-right: 270px; }
+    
+    &__list{ display: flex; }
+}
+
+.clock{
+    display: flex;
+
+    &__item{
+        width: 102px;
+        height: 112px;
+        background: #121212;
+        margin-right: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        &:last-child{ margin-right: 0; }
+    }
+
+    &__num{
+        font-weight: 700;
+        @include adaptiv-font(36, 30);
+        line-height: 140%;
+    }
+
+    &__text{
+        @include adaptiv-font(16, 12);
+        opacity: 0.4;
+    }
+}
+
+.aside{
+    background: #121212;
+  
+    &__content{
+        padding: 46px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__button{
+        display: block;
+        padding: 13px 30px;
+        font-weight: 700;
+        background: linear-gradient(to left, #DF5950, #9a239c, #DF5950);
+        background-size: 170%;
+        border-radius: 50px;
+        color: #fff;
+        line-height: 150%;
+        transition: background-position 0.6s ease;
+
+        &:hover{ background-position: right; }
+    }
+
+    &__item{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 28px;
+
+        &:last-child{ margin-bottom: 0; } 
+
+        span{ display: block; }
+    }
+
+    &__num{
+        margin-left: 30px;
+        font-weight: 700;
+        color: #FFFFFF;
+    }
+
+    &__text{
+        color: #FFFFFF;
+        opacity: 0.4;
+    }
+}
+
+.progress{
+    min-width: 714px;
+    position: relative;
+
+    &__info{
+        display: flex;
+        padding-bottom: 31px;
+    }
+
+    &__line{
+        display: flex;
+        justify-content: space-between;
+
+        span{ display: block; }
+    }
+
+    &__num{
+        margin-left: 30px;
+        font-weight: 700;
+    }
+
+    &__text{ opacity: 0.4; }
+}
+
+.bottom-line{
+    content: "";
+    width: 100%;
+    height: 6px;
+    background: #FFFFFF;
+    position: absolute;
+    top: calc(50% - 3px);
+    z-index: 1;
+}
+
+.top-line{
+    content: "";
+    width: 60%;
+    height: 6px;
+    background: linear-gradient(94.78deg, #DF5950 11.19%, #451046 93.72%);
+    position: absolute;
+    top: calc(50% - 3px);
+    z-index: 2;
+}
+
+@media (max-width: 1782px){
+    .header{
+        &__navigation{ max-width: 1326px; }
+
+        &__menu{ margin-right: 90px; }
+    }
+}
+
+@media (max-width: 1326px){
+    .header{
+        &__navigation{max-width: 970px;}
+
+        &__menu{margin-right: 40px;}
+
+        &__item{margin-right: 35px;}
+    }
+
+    .progress{ min-width: 490px; }
+
+    .aside__item{ margin-bottom: 20px; }
+
+    .aside__num{ margin-left: 12px; }
+
+    .aside__button{ padding: 10px 20px; }
+}
+
+@media (max-width: 991.98px){
+    .header{
+        &__navigation{
+            max-width: 750px;
+            justify-content: space-between;
+        }
+
+        &__list{
+            flex-wrap: wrap;
+            width: 410px;
+        }
+
+        &__item{
+            flex: 0 33.333%;
+            margin-bottom: 12px;
+            margin-right: 0;
+
+            &:nth-child(n + 3){ margin-bottom: 0;}
+        }
+
+        &__logo{ flex: 0 1 auto; }
+
+        &__item{ margin-right: 0; }
+
+        &__menu{ margin-right: 0; }
+    }
+
+    .aside{
+        &__content{
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        &__button{ 
+            padding: 10px 30px;
+            order: 3;
+        }
+
+        &__list{
+            margin-bottom: 25px;
+            min-width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    .progress{
+        margin-bottom: 40px;
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 767.98px){
+    .header{
+        &__navigation{ 
+            flex-direction: row-reverse;
+            justify-content: end;
+            position: relative;
+         }
+
+        &__button{ padding: 10px 20px; }
+
+        &__logo{ margin-left: 30px; }
+    }
+}
+
+@media (max-width: 530px){
+    .header__title{
+        text-align: center;
+        padding: 0 10px;
+    }
+
+    .clock{
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .clock__item{
+        flex: 0 0 42%;
+        margin: 0 0 30px 0;
+    }
+}
+
+@media (max-width: 434px){
+    .aside__list{
+        min-width: 190px;
+        display: block;
+        margin-bottom: 46px;
+    }
+
+    &__num{margin-left: 0;}
+}

@@ -1,0 +1,117 @@
+.partners{
+    &__title{
+        display: flex;
+        align-items: center;
+        margin-bottom: 89px;
+    }
+
+    &__row{
+        display: flex;
+        align-items: center;
+    }
+
+    &__item{
+        flex: 0 0 25%;
+        position: relative;
+        padding: 30px 68px;
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        &::after{
+            content: "";
+            height: 100%;
+            width: 1px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: #fff;
+            opacity: 0.3;
+        }
+
+        &:last-child::after{ display: none; }
+    }
+
+    &__content{ padding-top: 200px; }
+
+    &__rows{ position: relative; }
+}
+
+.line{
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    top: 50%;
+    left: 0;
+    background-color: #fff;
+    opacity: 0.3;
+}
+
+@media (max-width: 1330px){
+    .partners__item{ padding: 15px 30px; }
+
+    .parners__title{ margin-bottom: 78px;}
+}
+
+@media (max-width: 991.98px){
+    .partners{
+        &__item{ padding: 10px 20px; }
+
+        &__content{ padding-top: 100px; }
+
+        &__title{ margin-bottom: 62px;}
+    }
+}
+
+@media (max-width: 767.98px){
+    .partners{
+        &__title{
+            flex-direction: column;
+            justify-content: center;
+            max-width: 390px;
+            text-align: center;
+            margin: 0 auto 45px;
+        }
+
+        &__rows{
+            display: flex;
+            max-width: 450px;
+            margin: 0 auto;
+        }
+
+        &__item::after{
+            height: 1px;
+            width: 100%;
+            position: absolute;
+            top: 100%;
+            right: 0;
+        }
+
+        &__content{ padding-top: 60px; }
+
+        &__row{ flex-direction: column; }
+    }
+    
+    .line{ transform: rotate(90deg); }
+}
+
+
+@media (max-width: 380px){
+    .partners{
+        &__rows{ display: block; }
+
+        &__item{ width: 70%; }
+
+        &__title{ margin-bottom: 20px; }
+    }
+
+    .line{
+        width: 70%;
+        top: 50%;
+        left: 15%;
+        transform: rotate(0);
+    }
+}
